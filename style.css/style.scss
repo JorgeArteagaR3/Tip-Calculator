@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-family: "Space Mono", monospace;
+}
+h1 {
+    margin: 0 auto;
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2em;
+}
+input {
+    font-family: "Space Mono", monospace;
+    color: hsl(183, 100%, 15%);
+    font-size: 2rem;
+    padding-right: 0.5em;
+    height: 50px;
+    text-align: end;
+    border: none;
+    background-color: hsl(189, 41%, 97%);
+}
+body {
+    background-color: hsl(185, 41%, 84%);
+}
+main {
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.7em;
+    font-size: 1.6rem;
+    padding: 1em;
+    color: hsl(186, 14%, 43%);
+    width: 100%;
+    min-width: 375px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.bill-section {
+    margin: 0 auto;
+    text-align: center;
+    p {
+        font-size: 1rem;
+        text-align: start;
+    }
+    .bill-charge {
+        display: flex;
+        position: relative;
+        margin-bottom: 1em;
+        svg {
+            position: absolute;
+            left: 15px;
+            top: calc(50% - 0.35em);
+        }
+        input {
+            width: 100%;
+            border: none;
+            background-color: hsl(189, 41%, 97%);
+            text-align: end;
+            border-radius: 0.2em;
+        }
+    }
+    .bill-people {
+        .bill-people__paragraphs-container {
+            margin-bottom: 1em;
+            display: flex;
+            justify-content: space-between;
+            .error-text {
+                color: #e36f52;
+                display: none;
+            }
+        }
+        .bill-charge {
+            .zero-input {
+                border: none;
+                border-radius: 0.2em;
+            }
+        }
+    }
+    .bill-tip {
+        width: 100%;
+        margin-bottom: 1em;
+        p {
+            margin-bottom: 1em;
+        }
+        .bill-tip__divs {
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(3, 40px);
+            gap: 10px;
+            .bill-tip__grilla {
+                width: 100%;
+                position: relative;
+                .bill-tip__button {
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    background-color: hsl(183, 100%, 15%);
+                    border: none;
+                    border-radius: 0.3em;
+                    color: white;
+                    font-size: 1.6rem;
+                    font-family: "Space Mono", monospace;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: hsl(185, 41%, 84%);
+                        color: hsl(183, 100%, 15%);
+                    }
+                    &:focus {
+                        background-color: hsl(172, 67%, 45%);
+                    }
+                }
+                input {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    left: 0;
+
+                    &::placeholder {
+                        text-align: center;
+                        color: hsl(186, 14%, 43%);
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            .input__grilla {
+                position: relative;
+                background-color: white;
+            }
+        }
+    }
+}
+.results-container {
+    background-color: hsl(183, 100%, 15%);
+    border-radius: 0.7em;
+    padding: 1em;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    .results-container__tip-results {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 1em;
+        .results-container__tip-results--paragraph {
+            color: white;
+        }
+        .results-container__tip-results--amount {
+            font-size: 2rem;
+            color: hsl(172, 67%, 45%);
+        }
+    }
+    .reset-button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 2em;
+        button {
+            width: 100%;
+            background-color: hsl(172, 67%, 45%);
+            color: hsl(183, 100%, 15%);
+            font-family: "Space Mono", monospace;
+            font-size: 1.3rem;
+            border: none;
+            padding: 0.4em;
+            border-radius: 0.3em;
+            cursor: pointer;
+            &:hover {
+                background-color: hsl(185, 41%, 84%);
+            }
+        }
+    }
+}
+@media only screen and (min-width: 920px) {
+    main {
+        width: 100%;
+        max-width: 900px;
+        display: flex;
+    }
+    .bill-section {
+        width: 50%;
+        margin-right: 1em;
+    }
+    .results-container {
+        width: 50%;
+        padding: 3em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .reset-button-container {
+            margin-top: 5em;
+            align-self: center;
+            width: 100%;
+            button {
+                width: 100%;
+            }
+        }
+    }
+    .bill-section {
+        .bill-tip {
+            .bill-tip__divs {
+                display: grid;
+                grid-template-columns: 30% 30% 30%;
+                grid-template-rows: repeat(2, 40px);
+                gap: 10px;
+            }
+        }
+    }
+}
